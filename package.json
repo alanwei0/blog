@@ -1,0 +1,13 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "alan's blog",
+  "main": "index.js",
+  "repository": "https://github.com/alanwei0/blog.git",
+  "author": "Alan <alanwei000@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "lodash": "^4.17.20"
+  }
+}
