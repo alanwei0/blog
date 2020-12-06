@@ -1,0 +1,120 @@
+html {
+  font: 62.5%/1.5
+  -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Helvetica,Arial,
+  PingFang SC,Hiragino Sans GB,Microsoft YaHei UI,Microsoft YaHei,Source Han Sans CN,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: #F3F4F6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  color: #333;
+  min-height: 100vh;
+}
+
+h2 {
+  margin: 0;
+}
+
+.blog-name {
+  font-size: 2rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.post-list {
+  flex: 1;
+  margin: 1rem;
+}
+
+.post-group {
+  position: relative;
+  margin-bottom: 2rem;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0.4rem 0.6rem -0.1rem, rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem -0.1rem;
+  border-radius: 0.6rem;
+  padding: 1rem 1rem 1rem 2.5rem;
+}
+
+.post-group::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  padding: 0.5rem 0;
+  background: radial-gradient(#ccc 0.3rem, #0000 0.3rem) repeat-y;
+  background-size: 1.5rem 1.5rem;
+  background-position-x: 50%;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+.post-group .year {
+  margin-bottom: 1rem;
+}
+
+.post-group ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-group li {
+  display: flex;
+}
+
+.post-group li:last-child .post-title {
+  padding-bottom: 0;
+}
+
+.post-group time {
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-right: 0.2rem solid #D44147;
+  white-space: nowrap;
+}
+
+.post-group .post-title {
+  flex: 1;
+  text-decoration: none;
+  color: #607cbd;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+
+footer {
+  padding: 1rem 2rem;
+  border-top: 0.1rem solid #eee;
+  background: #fff;
+}
+
+footer .useful-link-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+footer .useful-link {
+  display: block;
+  font-size: 0;
+}
+
+footer .useful-link img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+footer .blog-copyright {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+footer .blog-copyright a {
+  color: inherit;
+}
