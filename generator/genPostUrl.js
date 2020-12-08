@@ -1,3 +1,6 @@
-const { basename, join } = require('path')
+const { dirname, basename } = require('path')
 
-exports.genPostUrl = postPath => join('/posts/', basename(postPath, '.md'))
+exports.genPostUrl = postPath => {
+  const year = basename(dirname(postPath))
+  return `/posts/${year}${basename(postPath, '.md')}`
+}

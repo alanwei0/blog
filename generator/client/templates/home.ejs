@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('/head', { title: blogName, prefixPath }) %>
+    <link rel="stylesheet" href="<%= prefixPath %>/css/home.css" />
+</head>
+<body class="yxx-card yxx-paper home">
+<h1 class="blog-name"><a href="<%= prefixPath || '/' %>"><%= blogName %></a></h1>
+<div class="post-list yxx-line">
+    <% postGroups.forEach(({ year, posts }) => { %>
+    <div class="post-group">
+        <h2 class="year yxx-side-info"><%= year %></h2>
+        <ol>
+            <% posts.forEach(post => { %>
+            <li><time class="yxx-side-info"><%= new Date(post.publishTime).toISOString().slice(5, 10) %></time><a class="post-title" href="<%= prefixPath + post.url %>"><%= post.title %></a></li>
+            <% }) %>
+        </ol>
+    </div>
+    <% }) %>
+</div>
+<%- include('/footer') %>
+</body>
+</html>

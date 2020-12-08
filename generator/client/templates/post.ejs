@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('/head', { title: `${blogName} - ${title}`, prefixPath }) %>
+    <link rel="stylesheet" href="<%= prefixPath %>/css/post.css" />
+</head>
+<body>
+<div class="post">
+    <h1 class="post-title"><%= title %></h1>
+    <div class="post-base-info">
+        <div class="bi-item">
+            <span><%= new Date(publishTime).toISOString().slice(0, 10) %></span>
+        </div>
+    </div>
+    <div class="post-content yxx-card"><%- postHTML %></div>
+    <!-- copyright part -->
+    <div class="post-copyright-panel yxx-card">
+        <div class="cr-item post-url">
+            <span>文章链接：</span>
+            <span><a href="<%= domain + prefixPath + url %>"><%= title %></a></span>
+        </div>
+        <div class="cr-item copyright-of-post">
+            <span>版权声明：</span>
+            <span>文章采用<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">CC BY-NC-ND 3.0</a>许可协议!</span>
+        </div>
+    </div>
+    <!-- copyright part end -->
+</div>
+
+<!--  post jump -->
+<div class="post-jump" style="display: <%= (previous || next) ? 'block' : 'none' %>">
+    <% if (previous) { %>
+        <a href="<%= prefixPath + previous.url %>" class="btn prev-btn"><%= previous.title %></a>
+    <% } %>
+    <% if (next) { %>
+        <a href="<%= prefixPath + next.url %>" class="btn next-btn"><%= next.title %></a>
+    <% } %>
+</div>
+<!--  post jump end -->
+
+<!-- comment part -->
+<!-- comment part end -->
+<%- include('/footer') %>
+</body>
+</html>

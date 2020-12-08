@@ -2,7 +2,6 @@ const { forEach } = require('lodash')
 const ejs = require('ejs')
 const fse = require('fs-extra')
 const path = require('path')
-const { genPostUrl } = require('./genPostUrl')
 
 /**
  * group post meta by year
@@ -18,17 +17,16 @@ const groupByYear = postMetas => {
   let group = {}
 
   forEach(postMetas, pm => {
-    const pm1 = { ...pm, url: genPostUrl(pm.filePath) }
-    const currYear = new Date(pm1.publishTime).getFullYear()
+    const currYear = new Date(pm.publishTime).getFullYear()
     if (group.year === undefined) {
       group.year = currYear
       group.posts = []
     }
     if (group.year === currYear) {
-      group.posts.push(pm1)
+      group.posts.push(pm)
     } else {
       res.push(group)
-      group = { year: currYear, posts: [pm1] }
+      group = { year: currYear, posts: [pm] }
     }
   })
 
@@ -39,11 +37,12 @@ const groupByYear = postMetas => {
   return res
 }
 
-exports.genIndexPages = async (postMetas, { DIST_DIR, TEMPLATES_ROOT, blogName }) => {
+exports.genHomePages = async (postMetas, globalConfig) => {
+  const { DIST_DIR, TEMPLATES_DIR, blogName } = globalConfig
   // group by year
   const postGroups = groupByYear(postMetas)
-  const templateStr = fse.readFileSync(path.join(TEMPLATES_ROOT, 'index.ejs'), 'utf8')
-  const indexTemplate = ejs.compile(templateStr, { root: TEMPLATES_ROOT })
-  const indexPage = indexTemplate({ blogName, postGroups })
+  const templateStr = fse.readFileSync(path.join(TEMPLATES_DIR, 'home.ejs'), 'utf8')
+  const indexTemplate = ejs.compile(templateStr, { root: TEMPLATES_DIR })
+  const indexPage = indexTemplate({ blogName, postGroups, ...globalConfig })
   await fse.outputFile(path.join(DIST_DIR, 'index.html'), indexPage, 'utf8')
 }
