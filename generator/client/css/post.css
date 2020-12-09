@@ -12,6 +12,14 @@
   margin-bottom: 1rem;
 }
 
+.post-content {
+  margin-bottom: 2rem;
+}
+
+.post-content p {
+  text-align: justify;
+}
+
 .post-content *:first-child {
   margin-top: 0;
 }
@@ -20,3 +28,21 @@
   margin-bottom: 0;
 }
 
+.post-copyright-panel {
+  width: 100%;
+  font-size: 1.3rem;
+  color: #999;
+  padding: 0.5rem 1rem;
+  border-left: 2px solid #999;
+  background-color: #fcfcfc;
+}
+
+.post-copyright-panel tbody {
+  vertical-align: top;
+}
+
+.post-copyright-panel tbody tr td:first-child {
+  width: 0;
+  white-space: nowrap;
+  text-align: right;
+}

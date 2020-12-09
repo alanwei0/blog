@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "alan's blog",
+  "description": "outside the cat door",
   "main": "index.js",
   "repository": "https://github.com/alanwei0/blog.git",
   "author": "Alan <alanwei000@gmail.com>",
@@ -10,7 +10,7 @@
     "preview": "",
     "build": "node ./generator",
     "dev": "NODE_ENV=development yarn build",
-    "deploy": ""
+    "deploy": "NODE_ENV=production yarn build"
   },
   "dependencies": {
     "ejs": "^3.1.5",

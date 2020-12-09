@@ -4,15 +4,15 @@
     <%- include('/head', { title: blogName, prefixPath }) %>
     <link rel="stylesheet" href="<%= prefixPath %>/css/home.css" />
 </head>
-<body class="yxx-card yxx-paper home">
+<body class="yxx-paper yxx-paper-sep home">
 <h1 class="blog-name"><a href="<%= prefixPath || '/' %>"><%= blogName %></a></h1>
-<div class="post-list yxx-line">
+<div class="post-list yxx-paper-line">
     <% postGroups.forEach(({ year, posts }) => { %>
     <div class="post-group">
-        <h2 class="year yxx-side-info"><%= year %></h2>
+        <h2 class="year yxx-paper-side-info"><%= year %></h2>
         <ol>
             <% posts.forEach(post => { %>
-            <li><time class="yxx-side-info"><%= new Date(post.publishTime).toISOString().slice(5, 10) %></time><a class="post-title" href="<%= prefixPath + post.url %>"><%= post.title %></a></li>
+            <li><time class="yxx-paper-side-info"><%= new Date(post.publishTime).toISOString().slice(5, 10) %></time><a class="post-title" href="<%= prefixPath + post.url %>"><%= post.title %></a></li>
             <% }) %>
         </ol>
     </div>

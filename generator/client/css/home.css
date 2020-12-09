@@ -4,6 +4,10 @@
   margin-bottom: 1rem;
 }
 
+.blog-name a {
+  text-decoration: none;
+}
+
 .post-list {
   flex: 1;
 }
