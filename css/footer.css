@@ -1,0 +1,26 @@
+footer {
+  padding-top: 1rem;
+  border-top: 0.1rem solid #eee;
+}
+
+footer .useful-link-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+footer .useful-link {
+  display: block;
+  font-size: 0;
+}
+
+footer .useful-link img {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+footer .blog-copyright {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #aaa;
+}
