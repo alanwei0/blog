@@ -33,7 +33,7 @@
   font-size: 1.3rem;
   color: #999;
   padding: 0.5rem 1rem;
-  border-left: 2px solid #999;
+  border-left: 0.2rem solid #999;
   background-color: #fcfcfc;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .post-copyright-panel tbody tr td:first-child {
-  width: 0;
+  width: 0.1rem;
   white-space: nowrap;
   text-align: right;
 }
