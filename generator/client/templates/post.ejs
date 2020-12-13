@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('/head', { title: `${blogName} - ${title}`, prefixPath }) %>
-    <link rel="stylesheet" href="<%= prefixPath %>/css/post.css" />
+    <%- include('/head', { title: `${blogName} - ${title}`, prefixPath, description: '' }) %>
+    <link rel="stylesheet" href="<%= prefixPath %>/css/post.css?v=1" />
 </head>
 <body class="yxx-paper post-page">
 <div class="post">
@@ -22,7 +22,7 @@
             </tr>
             <tr class="copyright-of-post">
                 <td>版权声明：</td>
-                <td>文章采用&nbsp;<a href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">CC BY-NC-ND 3.0</a>&nbsp;许可协议!</td>
+                <td>本文采用&nbsp;<a rel="noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">CC BY-NC-ND 3.0</a>&nbsp;许可协议。</td>
             </tr>
         </tbody>
     </table>
