@@ -11,7 +11,7 @@
     "build": "node ./generator",
     "dev": "NODE_ENV=development yarn build",
     "prod": "NODE_ENV=production yarn build",
-    "deploy": "git worktree add .site gh-pages && mv .site/CNAME .CNAME && rm -r .site/* && mv .CNAME .site/CNAME && cp -r dist/* .site && cd .site && git add -A && git ci -m \"deploy\" && git push origin gh-pages && cd .. && git worktree remove .site"
+    "deploy": "git worktree add .site gh-pages && rm -r .site/* && cp -r dist/* .site && cd .site && git add -A && git ci -m \"deploy\" && git push origin gh-pages && cd .. && git worktree remove .site"
   },
   "dependencies": {
     "ejs": "^3.1.5",
