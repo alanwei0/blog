@@ -12,10 +12,14 @@
             <span><%= new Date(publishTime).toISOString().slice(0, 10) %></span>
         </div>
     </div>
-    <div class="post-content"><%- postHTML %></div>
+    <article class="post-content"><%- postHTML %></article>
     <!-- copyright part -->
     <table class="post-copyright-panel">
         <tbody>
+            <tr class="author">
+                <td>作者：</td>
+                <td><a target="_blank" rel="noreferrer" href="https://github.com/alanwei0">Alan Wei</a></td>
+            </tr>
             <tr class="post-url">
                 <td>文章链接：</td>
                 <td><a href="<%= domain + prefixPath + url %>"><%= title %></a></td>

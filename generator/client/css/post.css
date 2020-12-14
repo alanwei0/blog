@@ -1,6 +1,6 @@
 .post {
   flex: 1;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 .post-title {
@@ -10,14 +10,17 @@
 .post-base-info {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .post-content {
   margin-bottom: 2rem;
+  line-height: 1.8;
 }
 
 .post-content p {
   text-align: justify;
+  margin: 1.5em 0;
 }
 
 .post-content *:first-child {
@@ -32,7 +35,7 @@
   width: 100%;
   font-size: 1.3rem;
   color: #767676;
-  padding: 0.5rem 1rem;
+  padding-left: 0.5rem;
   border-left: 0.2rem solid #767676;
 }
 
@@ -44,4 +47,10 @@
   width: 0.1rem;
   white-space: nowrap;
   text-align: right;
+}
+
+@media (min-width: 840px) {
+  .post {
+    margin: 1rem;
+  }
 }
