@@ -14,14 +14,17 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #333;
   max-width: 84rem;
   margin: 0 auto;
   min-height: 100vh;
 }
 
-@media (min-width: 84rem) {
+/* note: here we cannot use 84rem, because in media query, rem unit is always related to
+ * the *initial* font-size of root(html) element.
+ */
+@media (min-width: 840px) {
   body {
     margin: 1rem auto;
     min-height: calc(100vh - 2rem);
@@ -61,6 +64,7 @@ a {
   background-position-x: 50%;
   background-origin: content-box;
   background-clip: content-box;
+  pointer-events: none;
 }
 
 .yxx-paper.yxx-paper-sep:after {
@@ -71,6 +75,7 @@ a {
   left: 2.5rem;
   width: 6.5rem;
   border-right: 0.1rem solid #FCA5A5;
+  pointer-events: none;
 }
 
 .yxx-paper-line {
