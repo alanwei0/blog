@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <%- include('/head', { title: `${blogName} - ${title}`, prefixPath, description: '' }) %>
-    <link rel="stylesheet" href="<%= prefixPath %>/css/post.css?v=2" />
+    <link rel="stylesheet" href="<%= prefixPath %>/css/post.css?v=3" />
+    <link rel="stylesheet" href="<%= prefixPath %>/css/md.css?v=1" />
 </head>
 <body class="yxx-paper post-page">
 <div class="post">
@@ -12,7 +13,7 @@
             <span><%= new Date(publishTime).toISOString().slice(0, 10) %></span>
         </div>
     </div>
-    <article class="post-content"><%- postHTML %></article>
+    <article class="markdown-body post-content"><%- postHTML %></article>
     <!-- copyright part -->
     <table class="post-copyright-panel">
         <tbody>
@@ -35,11 +36,17 @@
 
 <!--  post jump -->
 <div class="post-jump" style="display: <%= (previous || next) ? 'block' : 'none' %>">
-    <% if (previous) { %>
-        <a href="<%= prefixPath + previous.url %>" class="btn prev-btn"><%= previous.title %></a>
-    <% } %>
     <% if (next) { %>
-        <a href="<%= prefixPath + next.url %>" class="btn next-btn"><%= next.title %></a>
+        <div class="btn next-btn">
+            <span>下一篇：</span>
+            <a href="<%= prefixPath + next.url %>"><%= next.title %></a>
+        </div>
+    <% } %>
+    <% if (previous) { %>
+        <div class="btn prev-btn">
+            <span>上一篇：</span>
+            <a href="<%= prefixPath + previous.url %>"><%= previous.title %></a>
+        </div>
     <% } %>
 </div>
 <!--  post jump end -->

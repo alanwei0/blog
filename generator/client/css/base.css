@@ -3,10 +3,10 @@
 }
 
 html {
-  font: 62.5%/1.5
-  -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Helvetica,Arial,
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Helvetica Neue,Helvetica,Arial,
   PingFang SC,Hiragino Sans GB,Microsoft YaHei UI,Microsoft YaHei,Source Han Sans CN,WenQuanYi Micro Hei,sans-serif;
-  /*-webkit-font-smoothing: antialiased;*/
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   background-color: #F3F4F6;
 }
@@ -14,20 +14,20 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-size: 1.6rem;
+  font-size: 16px;
   color: #333;
-  max-width: 84rem;
+  max-width: 840px;
   margin: 0 auto;
   min-height: 100vh;
 }
 
-/* note: here we cannot use 84rem, because in media query, rem unit is always related to
+/* note: here we cannot use 84px, because in media query, px unit is always related to
  * the *initial* font-size of root(html) element.
  */
 @media (min-width: 840px) {
   body {
-    margin: 1rem auto;
-    min-height: calc(100vh - 2rem);
+    margin: 10px auto;
+    min-height: calc(100vh - 20px);
   }
 }
 
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 30px;
 }
 
 a {
@@ -46,9 +46,9 @@ a {
 .yxx-paper {
   position: relative;
   background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0.4rem 0.6rem -0.1rem, rgba(0, 0, 0, 0.06) 0 0.2rem 0.4rem -0.1rem;
-  border-radius: 0.4rem;
-  padding: 1rem 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px 1px;
+  border-radius: 4px;
+  padding: 10px 25px;
 }
 
 .yxx-paper:before {
@@ -57,10 +57,10 @@ a {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 2.5rem;
-  padding: 0.5rem 0;
-  background: radial-gradient(#ccc 0.3rem, #0000 0.3rem) repeat-y;
-  background-size: 1.5rem 1.5rem;
+  width: 25px;
+  padding: 5px 0;
+  background: radial-gradient(#ccc 3px, #0000 3px) repeat-y;
+  background-size: 15px 15px;
   background-position-x: 50%;
   background-origin: content-box;
   background-clip: content-box;
@@ -72,23 +72,23 @@ a {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 2.5rem;
-  width: 6.5rem;
-  border-right: 0.1rem solid #FCA5A5;
+  left: 25px;
+  width: 65px;
+  border-right: 1px solid #FCA5A5;
   pointer-events: none;
 }
 
 .yxx-paper-line {
-  border-top: 0.1rem solid #eee;
-  background: linear-gradient(#0000, #0000 3.5rem, #eee 3.5rem);
-  background-size: 3.6rem 3.6rem;
-  line-height: 3.6rem;
-  padding-top: 0.9rem;
+  border-top: 1px solid #eee;
+  background: linear-gradient(#0000, #0000 35px, #eee 35px);
+  background-size: 36px 36px;
+  line-height: 36px;
+  padding-top: 9px;
 }
 
 .yxx-paper-line .yxx-paper-side-info {
-  width: 6.5rem;
-  padding-right: 1rem;
+  width: 65px;
+  padding-right: 10px;
   text-align: right;
   white-space: nowrap;
 }

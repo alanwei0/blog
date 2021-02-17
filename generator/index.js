@@ -21,16 +21,23 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 (async () => {
-  fse.removeSync(globalConfig.DIST_DIR)
-  // process all resources like javascript, css, image, etc.
-  await processResources(globalConfig)
+  try {
+    fse.removeSync(globalConfig.DIST_DIR)
+    // process all resources like javascript, css, image, etc.
+    await processResources(globalConfig)
 
-  const postMetaArr = await collectPostsMeta(globalConfig)
+    const postMetaArr = await collectPostsMeta(globalConfig)
 
-  // generate index page & list pages
-  await genHomePages(postMetaArr, globalConfig)
+    // generate index page & list pages
+    await genHomePages(postMetaArr, globalConfig)
 
-  // generate post pages
-  await genPostPages(postMetaArr, globalConfig)
+    // generate post pages
+    await genPostPages(postMetaArr, globalConfig)
+  } catch (e) {
+    // clean
+    fse.removeSync(globalConfig.DIST_DIR)
+
+    throw e
+  }
 })()
 

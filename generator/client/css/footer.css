@@ -1,12 +1,12 @@
 footer {
-  padding-top: 1rem;
-  /*border-top: 0.1rem solid #eee;*/
+  padding-top: 10px;
+  /*border-top: 0.1px solid #eee;*/
 }
 
 footer .useful-link-group {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
 
 footer .useful-link {
@@ -15,12 +15,12 @@ footer .useful-link {
 }
 
 footer .useful-link img {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 24px;
+  height: 24px;
 }
 
 footer .blog-copyright {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 12px;
   color: #767676;
 }

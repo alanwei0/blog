@@ -1,42 +1,30 @@
 .post {
   flex: 1;
-  margin: 1rem 0;
+  margin-bottom: 24px;
 }
 
 .post-title {
   text-align: center;
+  font-size: 30px;
 }
 
 .post-base-info {
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
 }
 
 .post-content {
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-.post-content p {
-  text-align: justify;
-  margin: 1.5em 0;
-}
-
-.post-content *:first-child {
-  margin-top: 0;
-}
-
-.post-content *:last-child {
-  margin-bottom: 0;
+  margin-bottom: 24px;
 }
 
 .post-copyright-panel {
   width: 100%;
-  font-size: 1.3rem;
+  font-size: 13px;
   color: #767676;
-  padding-left: 0.5rem;
-  border-left: 0.2rem solid #767676;
+  padding-left: 5px;
+  border-left: 2px solid #767676;
 }
 
 .post-copyright-panel tbody {
@@ -44,13 +32,38 @@
 }
 
 .post-copyright-panel tbody tr td:first-child {
-  width: 0.1rem;
+  width: 1px;
   white-space: nowrap;
   text-align: right;
 }
 
-@media (min-width: 840px) {
-  .post {
-    margin: 1rem;
-  }
+/*@media (min-width: 840px) {*/
+/*  .post {*/
+/*    margin: 10px;*/
+/*  }*/
+/*}*/
+
+.post-jump {
+  flex: none;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 24px 0;
+}
+
+.post-jump .btn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.post-jump .btn a {
+  text-decoration: none;
+}
+
+.post-jump .next-btn a {
+  color: #479651;
+}
+
+.post-jump .prev-btn a {
+  color: #9c4545;
 }

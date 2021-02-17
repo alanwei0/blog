@@ -24,7 +24,7 @@ exports.genPostPages = async (postMetas, globalConfig) => {
 
   await Promise.all([_.map(postMetas, async (meta, i) => {
     // read post md file
-    const str = await extractPostContent(meta.filePath)
+    const str = await extractPostContent(meta.mdPath)
     const postHTML = md.render(str)
 
     const templateStr = fse.readFileSync(path.join(TEMPLATES_DIR, 'post.ejs'), 'utf8')
@@ -36,6 +36,9 @@ exports.genPostPages = async (postMetas, globalConfig) => {
       previous: postMetas[i - 1],
       next: postMetas[i + 1],
     })
+    // copy assets except index.md
+    await fse.copy(meta.postDir, path.join(DIST_DIR, meta.url), { filter: srcFile => !srcFile.endsWith('index.md') })
+    // generate index.html
     await fse.outputFile(path.join(DIST_DIR, meta.url, 'index.html'), postPage, 'utf8')
   })])
 }

@@ -26,11 +26,13 @@ exports.collectPostsMeta = async globalConfig => {
     .value()
 
   let postMetaArr = await Promise.all(_.map(postPathArr, pPath => {
-    return extractPostMeta(pPath)
+    const mdPath = path.join(pPath, 'index.md')
+    return extractPostMeta(mdPath)
       .then(meta => (
         {
           ...meta,
-          filePath: pPath,
+          postDir: pPath,
+          mdPath,
           url: genPostUrl(pPath, prefixPath),
           publishTime: +new Date(meta.publishTime)
         }
